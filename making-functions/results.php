@@ -36,17 +36,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="container">
-  <h1>Making Functions</h1>
-  <div>
-    <h2>Original phrases:</h2>
-    <ul>
-      <li><?php echo $text1; ?></li>
-      <li><?php echo $text2; ?></li>
-      <li><?php echo $text3; ?></li>
-    </ul>
-    <?php display_results($encrypted); ?>
+  <div class="container">
+    <h1>Making Functions</h1>
+    <div>
+      <h2>Original phrases:</h2>
+      <ul>
+        <li><?php echo $text1; ?></li>
+        <li><?php echo $text2; ?></li>
+        <li><?php echo $text3; ?></li>
+      </ul>
+      <?php display_results($encrypted); ?>
+    </div>
   </div>
-</div>
 </body>
 </html>
