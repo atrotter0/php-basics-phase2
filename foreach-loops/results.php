@@ -11,11 +11,7 @@
   {
     $total = 0;
     foreach($prices_array as $item_price) {
-      if(isset($item_price)) {
-        $total += (int)$item_price;
-      } else {
-        $total += 0;
-      }
+      isset($item_price) ? $total += (int)$item_price : $total += 0;
     }
     return $total;
   }
