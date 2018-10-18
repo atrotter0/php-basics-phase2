@@ -41,6 +41,31 @@
       return $this->color;
     }
 
+    public function setMake($new_make)
+    {
+      $this->make = $new_make;
+    }
+
+    public function setModel($new_model)
+    {
+      $this->model = $new_model;
+    }
+
+    public function setMiles($new_miles)
+    {
+      $this->miles = $new_miles;
+    }
+
+    public function setPrice($new_price)
+    {
+      $this->price = $new_price;
+    }
+
+    public function setColor($new_color)
+    {
+      $this->color = $new_color;
+    }
+
     public function carDetails()
     {
       return $this->getColor() . " " . $this->getMake() . " " . $this->getModel() .
