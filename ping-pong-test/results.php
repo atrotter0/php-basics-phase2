@@ -48,8 +48,7 @@
 
   function printResult($modified_numbers)
   {
-    foreach ($modified_numbers as $number)
-    {
+    foreach ($modified_numbers as $number) {
       echo "<li>" . $number . "</li>";
     }
   }

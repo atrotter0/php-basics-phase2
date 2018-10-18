@@ -15,7 +15,7 @@
   <h1>Specials Menu:</h1>
   <ul>
     <?php
-      foreach($daily_specials as $special) {
+      foreach ($daily_specials as $special) {
         echo "<li>" . $special . "</li>";
       }
     ?>
