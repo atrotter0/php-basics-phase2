@@ -12,10 +12,10 @@
       <h1>Dealership:</h1>
       <p>Fill out the form to search for a car by price.</p>
       <div class="form-group">
-        <label for="price"></label>
+        <label for="price">Price:</label>
         <input type="number" name="price" class="form-control">
       </div>
-      <button type="submit" class="btn btn-lg btn-primary"></button>
+      <button type="submit" class="btn btn-lg btn-primary">Find Cars</button>
     </form>
   </div>
 </body>

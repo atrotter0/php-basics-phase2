@@ -5,13 +5,15 @@
     private $model;
     private $miles;
     private $price;
+    private $color;
 
-    public function __construct($make, $model, $miles, $price)
+    public function __construct($make, $model, $miles, $price, $color = "No specified color")
     {
       $this->make = $make;
       $this->model = $model;
       $this->miles = $miles;
       $this->price = $price;
+      $this->color = $color;
     }
 
     public function getMake()
@@ -33,20 +35,37 @@
     {
       return $this->price;
     }
+
+    public function getColor()
+    {
+      return $this->color;
+    }
+
+    public function displayCar()
+    {
+      echo "<p>" . $this->getColor() . " " . $this->getMake() . " " . $this->getModel() .
+        ": $" . $this->getPrice();
+    }
   }
 
   function buildCars()
   {
     $cars_holder = array();
-    array_push($cars_holder, );
+    $car1 = new Car("Volkswagon", "Jetta", 131000, 2100, "Red");
+    $car2 = new Car("Subaru", "Impreza", 182000, 2500, "Black");
+    $car3 = new Car("Jeep", "Cherokee", 194000, 1900);
+    array_push($cars_holder, $car1, $car2, $car3);
+    return $cars_holder;
   }
 
-  function printArray($array)
+  function printCars($cars_list)
   {
-    foreach ($array as $element) {
-      echo "<li>" . $element . "</li>";
+    foreach ($cars_list as $car) {
+      $car->displayCar();
     }
   }
+
+  $cars_array = buildCars();
 ?>
 
 <!DOCTYPE html>
@@ -60,10 +79,8 @@
 <body>
   <div class="container">
     <h1>Dealership:</h1>
-    <p>Your cars are listed below.</p>
-    <ul>
-
-    </ul>
+    <p>Matching cars are listed below.</p>
+    <?php printCars($cars_array); ?>
   </div>
 </body>
 </html>
