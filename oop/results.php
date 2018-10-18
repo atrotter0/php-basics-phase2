@@ -41,9 +41,9 @@
       return $this->color;
     }
 
-    public function displayCar()
+    public function carDetails()
     {
-      echo "<p>" . $this->getColor() . " " . $this->getMake() . " " . $this->getModel() .
+      return $this->getColor() . " " . $this->getMake() . " " . $this->getModel() .
         ": $" . $this->getPrice();
     }
   }
@@ -61,7 +61,7 @@
   function printCars($cars_list)
   {
     foreach ($cars_list as $car) {
-      $car->displayCar();
+      echo "<p>" . $car->carDetails() . "</p>";
     }
   }
 
