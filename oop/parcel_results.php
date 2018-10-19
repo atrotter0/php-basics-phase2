@@ -1,7 +1,7 @@
 <?php
   class Parcel
   {
-    const SHIPPING_MULTIPLE = 5;
+    const COST = 20;
     private $width;
     private $length;
     private $height;
@@ -17,7 +17,7 @@
       $this->height = $height;
       $this->weight = $weight;
       $this->distance = $distance;
-      $this->volume = $this->calculateVolume();
+      $this->calculateVolume();
       $this->calculateCostToShip();
     }
 
@@ -26,18 +26,58 @@
       return $this->cost;
     }
 
+    public function getWidth()
+    {
+      return $this->width;
+    }
+
+    public function getLength()
+    {
+      return $this->length;
+    }
+
+    public function getHeight()
+    {
+      return $this->height;
+    }
+
+    public function getWeight()
+    {
+      return $this->weight;
+    }
+
+    public function setWidth($width)
+    {
+      $this->width = $width;
+    }
+
+    public function setLength($length)
+    {
+      $this->length = $length;
+    }
+
+    public function setHeight($height)
+    {
+      $this->height = $height;
+    }
+
+    public function setWeight($weight)
+    {
+      $this->weight = $weight;
+    }
+
     public function calculateVolume()
     {
-      return $this->length * $this->width * $this->height;
+      $this->volume = $this->length * $this->width * $this->height;
     }
 
     public function calculateCostToShip()
     {
-      $this->cost = $this->volume / $this->distance * self::SHIPPING_MULTIPLE;
+      $this->cost = ($this->distance / self::COST) + ($this->volume / self::COST);
     }
   }
 
-  function costToShip($length, $width, $height, $weight, $distance)
+  function displayCostToShip($length, $width, $height, $weight, $distance)
   {
     if ($length && $width && $height && $weight) {
       $parcel = new Parcel($width, $length, $height, $weight, $distance);
@@ -61,7 +101,7 @@
     <h1>Parcel:</h1>
     <p>The cost for shipping your parcel is listed below.</p>
     <?php
-      costToShip(
+      displayCostToShip(
         $_GET["length"],
         $_GET["width"],
         $_GET["height"],
