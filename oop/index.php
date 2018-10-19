@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <form action="results.php">
+    <form action="car_results.php">
       <h1>Dealership:</h1>
       <p>Fill out the form to search for a car by a specified price and mileage.</p>
       <div class="form-group">
