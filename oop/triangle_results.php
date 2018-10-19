@@ -14,9 +14,21 @@
 
     public function notATriangle()
     {
-      return (($this->side1 + $this->side2 <= $this->side3)) ||
-        $this->side1 + $this->side3 <= $this->side2 ||
-          $this->side2 + $this->side3 <= $this->side1;
+      return (
+        ($this->side1 + $this->side2 <= $this->side3) ||
+        ($this->side1 + $this->side3 <= $this->side2) ||
+        ($this->side2 + $this->side3 <= $this->side1)
+      );
+    }
+
+    // 2 sides equal
+    public function isIsosceles()
+    {
+      return (
+        ($this->side1 == $this->side2 && $this->side2 !== $this->side3) ||
+        ($this->side1 == $this->side3 && $this->side2 !== $this->side3) ||
+        ($this->side1 !== $this->side2 && $this->side2 == $this->side3)
+      );
     }
   }
 
