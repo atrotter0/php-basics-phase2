@@ -11,6 +11,18 @@
       $this->side2 = $side2;
       $this->side3 = $side3;
     }
+
+    public function notATriangle()
+    {
+      return (($this->side1 + $this->side2 <= $this->side3)) ||
+        $this->side1 + $this->side3 <= $this->side2 ||
+          $this->side2 + $this->side3 <= $this->side1;
+    }
+  }
+
+  function checkTriangle($triangle)
+  {
+
   }
 ?>
 
