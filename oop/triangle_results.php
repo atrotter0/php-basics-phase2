@@ -30,14 +30,39 @@
         ($this->side1 !== $this->side2 && $this->side2 == $this->side3)
       );
     }
+
+    // all sides equal
+    public function isEquilateral()
+    {
+      return (
+        ($this->side1 == $this->side2 && $this->side1 == $this->side3)
+      );
+    }
+
+    // no sides equal
+    public function isScalene()
+    {
+      return (
+        ($this->side1 !== $this->side2 && $this->side2 !== $this->side3)
+      );
+    }
   }
 
   function checkTriangle($triangle)
   {
-
+    if ($triangle->notATriangle()) {
+      echo "Not a triangle!";
+    } elseif ($triangle->isIsosceles()) {
+      echo "Isosceles";
+    } elseif ($triangle->isEquilateral()) {
+      echo "Equilateral";
+    } elseif ($triangle->isScalene()) {
+      echo "Scalene";
+    }
   }
-?>
 
+  $triangle = new Triangle($_GET["side1"], $_GET["side2"], $_GET["side3"]);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -52,6 +77,7 @@
   <div class="container">
     <h1>Triangle:</h1>
     <p>The type of your triangle is listed below.</p>
+    <p><?php checkTriangle($triangle); ?></p>
   </div>
 </body>
 </html>
