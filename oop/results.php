@@ -6,14 +6,16 @@
     private $miles;
     private $price;
     private $color;
+    private $img_path;
 
-    public function __construct($make, $model, $miles, $price, $color = "No specified color")
+    public function __construct($make, $model, $miles, $price, $color = "No specified color", $img_path ="img/car.png")
     {
       $this->make = $make;
       $this->model = $model;
       $this->miles = $miles;
       $this->price = $price;
       $this->color = $color;
+      $this->img_path = $img_path;
     }
 
     public function getMake()
@@ -41,6 +43,11 @@
       return $this->color;
     }
 
+    public function getImgPath()
+    {
+      return $this->img_path;
+    }
+
     public function setMake($new_make)
     {
       $this->make = $new_make;
@@ -66,6 +73,11 @@
       $this->color = $new_color;
     }
 
+    public function setImgPath($new_img_path)
+    {
+      $this->img_path = $new_img_path;
+    }
+
     public function carDetails()
     {
       return $this->getColor() . " " . $this->getMake() . " " . $this->getModel() .
@@ -86,6 +98,7 @@
   function printCars($cars_list)
   {
     foreach ($cars_list as $car) {
+      echo "<p><img src='" . $car->getImgPath() . "' alt='image of a car'>";
       echo "<p>" . $car->carDetails() . "</p>";
     }
   }
