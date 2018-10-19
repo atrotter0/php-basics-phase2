@@ -46,6 +46,23 @@
       </div>
       <button type="submit" class="btn btn-lg btn-primary">Calculate Shipping Cost</button>
     </form>
+    <form action="triangle_results.php">
+      <h1>Triangle:</h1>
+      <p>Fill out the form to determine what type if triangle you have.</p>
+      <div class="form-group">
+        <label for="side1">Side 1:</label>
+        <input type="number" name="side1" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="side2">Side 2:</label>
+        <input type="number" name="side2" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="side3">Side 3:</label>
+        <input type="number" name="side3" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-lg btn-primary">Get Triangle</button>
+    </form>
   </div>
 </body>
 </html>
