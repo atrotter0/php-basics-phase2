@@ -61,7 +61,15 @@
     }
   }
 
-  $triangle = new Triangle($_GET["side1"], $_GET["side2"], $_GET["side3"]);
+  function runTriangleCheck()
+  {
+    if ($_GET["side1"] && $_GET["side2"] && $_GET["side3"]) {
+      $triangle = new Triangle($_GET["side1"], $_GET["side2"], $_GET["side3"]);
+      checkTriangle($triangle);
+    } else {
+     echo "Please fill out all fields to check your triangle.";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +85,7 @@
   <div class="container">
     <h1>Triangle:</h1>
     <p>The type of your triangle is listed below.</p>
-    <p><?php checkTriangle($triangle); ?></p>
+    <p><?php runTriangleCheck(); ?></p>
   </div>
 </body>
 </html>
