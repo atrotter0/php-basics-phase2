@@ -1,7 +1,7 @@
 <?php
   class Parcel
   {
-    const SHIPPING_MULTIPLIER = 5;
+    const SHIPPING_MULTIPLE = 5;
     private $width;
     private $length;
     private $height;
@@ -18,7 +18,12 @@
       $this->weight = $weight;
       $this->distance = $distance;
       $this->volume = $this->calculateVolume();
-      $this->cost = $this->costToShip();
+      $this->calculateCostToShip();
+    }
+
+    public function getCost()
+    {
+      return $this->cost;
     }
 
     public function calculateVolume()
@@ -28,7 +33,7 @@
 
     public function calculateCostToShip()
     {
-      return $this->volume / $this->distance * SHIPPING_MULTIPLIER;
+      $this->cost = $this->volume / $this->distance * self::SHIPPING_MULTIPLE;
     }
   }
 
@@ -36,7 +41,7 @@
   {
     if ($length && $width && $height && $weight) {
       $parcel = new Parcel($width, $length, $height, $weight, $distance);
-      return $parcel->getCost();
+      echo "Cost: $" . $parcel->getCost();
     } else {
       echo "<p>Please fill out all fields to calculate the shipping cost of your parcel.</p>";
     }
