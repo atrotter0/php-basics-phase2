@@ -10,10 +10,14 @@
   <div class="container">
     <form action="results.php">
       <h1>Dealership:</h1>
-      <p>Fill out the form to search for a car by price.</p>
+      <p>Fill out the form to search for a car by a specified price and mileage.</p>
       <div class="form-group">
-        <label for="price">Price:</label>
-        <input type="number" name="price" class="form-control">
+        <label for="search_price">Price:</label>
+        <input type="number" name="search_price" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="search_mileage">Mileage:</label>
+        <input type="number" name="search_mileage" class="form-control">
       </div>
       <button type="submit" class="btn btn-lg btn-primary">Find Cars</button>
     </form>

@@ -103,7 +103,24 @@
     }
   }
 
+  function findCars($cars_array, $input_price, $input_mileage)
+  {
+    $matching_cars = array();
+    foreach ($cars_array as $car) {
+      if (carMatch($car, $input_price, $input_mileage)) {
+        array_push($matching_cars, $car);
+      }
+    }
+    return $matching_cars;
+  }
+
+  function carMatch($car, $input_price, $input_mileage)
+  {
+    return ($car->getPrice() <= $input_price && $car->getMiles() <= $input_mileage);
+  }
+
   $cars_array = buildCars();
+  $matching_cars = findCars($cars_array, $_GET["search_price"], $_GET["search_mileage"]);
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +135,7 @@
   <div class="container">
     <h1>Dealership:</h1>
     <p>Matching cars are listed below.</p>
-    <?php printCars($cars_array); ?>
+    <?php printCars($matching_cars); ?>
   </div>
 </body>
 </html>
